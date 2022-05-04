@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?colorOnPrimary"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_height="match_parent"
+    tools:context=".ShowActivity">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="15dp"
+        android:background="?colorOnPrimary"
+        android:backgroundTint="?colorPrimaryVariant"
+        app:cardElevation="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:layout_height="fill_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"/>
+                <ImageView
+                    android:onClick="BackActivity"
+                    android:layout_weight="0.4"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/cancel_icon"
+                    android:layout_gravity="center"
+                    />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"/>
+
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="Sentimental Analysis"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textSize="26dp"
+                android:layout_gravity="center"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3.75"
+                app:lottie_rawRes="@raw/data_analysis"
+                app:lottie_autoPlay="true"
+                android:layout_gravity="center"
+                app:lottie_loop="true"/>
+
+
+            <ImageView
+                android:id="@+id/emoji"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+
+                android:layout_weight="1.5"
+                android:src="@drawable/joy"></ImageView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_width="match_parent"
+
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:background="?colorPrimary"
+                android:backgroundTint="?colorPrimary"
+                app:cardElevation="10dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.75">
+
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Tone Name"
+                    android:gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:id="@+id/score_text"
+                android:layout_width="wrap_content"
+                android:textColor="#D3D3D3"
+                android:text="Accuracy:  100%"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="20dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.75"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+</LinearLayout>

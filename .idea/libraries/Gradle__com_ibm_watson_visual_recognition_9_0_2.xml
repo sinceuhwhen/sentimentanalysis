@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ibm.watson:visual-recognition:9.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/visual-recognition/9.0.2/445ab0e5ca176ec82f458ba00c23c94f8c1c0f55/visual-recognition-9.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/visual-recognition/9.0.2/a5bc7affcb2f912d0cf69fee1697c0f83a260d94/visual-recognition-9.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/visual-recognition/9.0.2/68fa7491a2affb0a2a6fc6fe0862f6d5924548ad/visual-recognition-9.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

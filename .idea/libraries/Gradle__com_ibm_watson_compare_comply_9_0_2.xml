@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ibm.watson:compare-comply:9.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/compare-comply/9.0.2/e522f4e657aa70244acbf5fed5b568190d55d8d/compare-comply-9.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/compare-comply/9.0.2/a3d7deaff5cb30868e8afd7639f63196f94b33ba/compare-comply-9.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/compare-comply/9.0.2/1af9b285d79cf27932f29d9d71e6090caee3d364/compare-comply-9.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

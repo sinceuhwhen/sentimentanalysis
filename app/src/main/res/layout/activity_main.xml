@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="?colorOnPrimary"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+
+    tools:context=".MainActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></View>
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:text="Hey ! I am Robo Analyzer...."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"></View>
+
+    <EditText
+        android:id="@+id/edttxt1"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="18dp"
+        android:maxLines="2"
+        android:maxLength="70"
+        android:background="@drawable/bg_graystroke"
+        android:hint="Enter analyizing text "
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textColorHint="#C1C1C1"
+        ></EditText>
+
+    <View
+        android:id="@+id/view_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"></View>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/analyize_btn"
+        android:layout_width="match_parent"
+        android:onClick="AnalyizeData"
+        android:layout_height="0dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        app:cardCornerRadius="25dp"
+        android:background="#FFC935"
+        android:backgroundTint="#FFC935"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Analyize"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="gone"
+        android:id="@+id/animationViewloader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        app:lottie_rawRes="@raw/happy_loader"
+        app:lottie_autoPlay="true"
+        android:layout_gravity="center"
+        app:lottie_loop="true"/>
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"></View>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"></View>
+
+    <TextView
+        android:onClick="ShowDialogBox"
+        android:drawableTop="@drawable/ic_baseline_arrow_up"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Temperature and humidity"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#CACACA"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_weight="1">
+
+    </TextView>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"></View>
+
+
+
+</LinearLayout>

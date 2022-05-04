@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ibm.watson:ibm-watson:9.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/ibm-watson/9.0.2/32f5e4985107dfa5940e91ec9f3b61914f7e5534/ibm-watson-9.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/ibm-watson/9.0.2/5208cf499137f5092d0470937e9921e8f272fc9b/ibm-watson-9.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.watson/ibm-watson/9.0.2/1167160eb1eaf17ce2d99e034ea7f105da4b2311/ibm-watson-9.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
