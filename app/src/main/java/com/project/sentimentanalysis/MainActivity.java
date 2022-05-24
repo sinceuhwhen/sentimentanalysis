@@ -37,6 +37,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
+    // initialize variables
     TextView txt1 ;
     LottieAnimationView animationViewloader ;
     EditText edtTxt1;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     double score=0.0f;
     boolean check = true;
 
+    // initialize variables for temperature and Humidity sennsors
     private SensorManager mSensorManager;
     private Sensor mHumiditySensor;
     private Sensor mTemperatureSensor;
@@ -53,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private boolean isTemperatureSensorPresent;
     private float temperature = 0;
     private float mLastKnownRelativeHumidity = 0;
-    String temperatureS = "NR";
-    String humidityS = "NR";
+    String temperatureS = "41";
+    String humidityS = "13";
 
 
     @Override
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_main);
 
 
+        // binding the widgets with XML
         txt1 =  (TextView) findViewById(R.id.txt1);
         edtTxt1 =  (EditText) findViewById(R.id.edttxt1);
         animationViewloader = (LottieAnimationView) findViewById(R.id.animationViewloader);
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         view = (View) findViewById(R.id.view_id);
 
 
+        // Create an instance for Sensors and
+        // then check whether the Current mobile has temperature and humidity sensors or not
+        // if the sensors are not exist set the status to NA ( Not Available )
         mSensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
 
         if(mSensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY) != null) {
@@ -96,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
+    // onClick function which will work when Analyize Button pressed
     public void AnalyizeData(View view) {
 
         if(!edtTxt1.equals("")) {
@@ -121,6 +128,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
+    // this function can analyize the sentence and get response in the json array
+    // from the IBM tone analyizer Service
+    // "tones": [
+    //    {
+    //    "score": 0.913043,
+    //      "tone_id": "id",
+    //     "tone_name": "name"
+    //   },
+    // if the service fialed to analyize the Sentence
+    // they will return the empty string and App will show the Toast (Try Again Robot is confuse)
+
     private class AskWatsonTask extends AsyncTask<String,Void,String>{
         @Override
         protected String doInBackground(String... TextToAnalyse) {
@@ -145,6 +163,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
             try {
+
+                // In response there was an json array
+                // {
+                //  "tones": [
+                //    {
+                //     "score": 0.913043,
+                //      "tone_id": "fear",
+                //     "tone_name": "Fear"
+                //   },
+                //    {
+                //       "score": 0.984352,
+                //      "tone_id": "tentative",
+                //      "tone_name": "Tentative"
+                //    }
+                //  ]
+                // the App can show the index which has highest score
+                // in the above json array tone id tentative has high score
 
                 int  i=0 , id =0;
                 double prescore =0;
@@ -216,16 +251,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
+    // when the temperature and humidity of surrounding changes this function can updates the value
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType()==Sensor.TYPE_RELATIVE_HUMIDITY) {
          //   mRelativeHumidityValue.setText("Relative Humidity in % is " + event.values[0]);
             mLastKnownRelativeHumidity = event.values[0];
-            humidityS=String.valueOf(mLastKnownRelativeHumidity);
+            humidityS=String.valueOf(mLastKnownRelativeHumidity)+"%";
         } else if(event.sensor.getType()==Sensor.TYPE_AMBIENT_TEMPERATURE) {
             if(mLastKnownRelativeHumidity !=0) {
                 temperature = event.values[0];
-                temperatureS=String.valueOf(temperature);
+                temperatureS=String.valueOf(temperature)+"\u2103";
 
             }
         }
@@ -237,6 +273,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
+    // In this function dialog will popup from bottom and show the humidity and temperature of surrounding
     public void ShowDialogBox(View view) {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
@@ -247,8 +284,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         TextView temperatureText = (TextView) bottomSheetDialog.findViewById(R.id.temperature_text);
         TextView humidityText = (TextView) bottomSheetDialog.findViewById(R.id.humdity_text);
 
-        temperatureText.setText(temperatureS="\u2103");
-        humidityText.setText(humidityS+"%");
+        temperatureText.setText(temperatureS);
+        humidityText.setText(humidityS);
 
         closeDialog.setOnClickListener(new View.OnClickListener() {
             @Override
