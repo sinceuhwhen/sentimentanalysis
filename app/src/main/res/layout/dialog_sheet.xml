@@ -46,7 +46,8 @@
             android:src="@drawable/humidity"
             android:padding="8dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            tools:ignore="NestedWeights" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -99,7 +100,8 @@
             android:src="@drawable/temperature"
             android:padding="8dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            tools:ignore="NestedWeights" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
