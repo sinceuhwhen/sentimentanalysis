@@ -1,3 +1,4 @@
+// Tala Bin Hussein S00049918
 package com.project.sentimentanalysis;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,41 +14,32 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.card.MaterialCardView;
-import com.ibm.cloud.sdk.core.http.ServiceCallback;
 import com.ibm.cloud.sdk.core.security.Authenticator;
 import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import com.ibm.watson.tone_analyzer.v3.ToneAnalyzer;
 import com.ibm.watson.tone_analyzer.v3.model.ToneAnalysis;
 import com.ibm.watson.tone_analyzer.v3.model.ToneOptions;
-import com.ibm.watson.tone_analyzer.v3.model.ToneScore;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
-    // initialize variables
-    TextView txt1 ;
+    // initialise variables
+    TextView intro ;
     LottieAnimationView animationViewloader ;
-    EditText edtTxt1;
+    EditText textEntry;
     CardView btn1;
     View view;
     String sentiment;
     double score=0.0f;
     boolean check = true;
 
-    // initialize variables for temperature and Humidity sennsors
+    // initialise variables for temperature and humidity sensors
     private SensorManager mSensorManager;
     private Sensor mHumiditySensor;
     private Sensor mTemperatureSensor;
@@ -66,16 +58,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
         // binding the widgets with XML
-        txt1 =  (TextView) findViewById(R.id.txt1);
-        edtTxt1 =  (EditText) findViewById(R.id.edttxt1);
+        intro =  (TextView) findViewById(R.id.intro);
+        textEntry =  (EditText) findViewById(R.id.textEntry);
         animationViewloader = (LottieAnimationView) findViewById(R.id.animationViewloader);
-        btn1 = (CardView) findViewById(R.id.analyize_btn);
+        btn1 = (CardView) findViewById(R.id.analyseButton);
         view = (View) findViewById(R.id.view_id);
 
 
         // Create an instance for Sensors and
-        // then check whether the Current mobile has temperature and humidity sensors or not
-        // if the sensors are not exist set the status to NA ( Not Available )
+        // then check whether the current mobile has temperature and humidity sensors or not
+        // if the sensors do not exist, status will be set to NA ( Not Available )
         mSensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
 
         if(mSensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY) != null) {
@@ -102,18 +94,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
-    // onClick function which will work when Analyize Button pressed
-    public void AnalyizeData(View view) {
+    // onClick function which will work when the analyse button is pressed
+    public void AnalyseData(View view) {
 
-        if(!edtTxt1.equals("")) {
-            edtTxt1.onEditorAction(EditorInfo.IME_ACTION_DONE);
+        if(!textEntry.equals("")) {
+            textEntry.onEditorAction(EditorInfo.IME_ACTION_DONE);
             btn1.setVisibility(View.GONE);
             view.setVisibility(View.GONE);
 
             animationViewloader.setVisibility(View.VISIBLE);
 
-            System.out.println("logging to the console that the button pressed for the test" + edtTxt1.getText());
-            txt1.setText("Display at UI the sentiment to be checked for" + edtTxt1.getText());
+            System.out.println("logging to the console that the button pressed for the test" + textEntry.getText());
+            intro.setText("Display at UI the sentiment to be checked for" + textEntry.getText());
 
             AskWatsonTask task = new AskWatsonTask();
             task.execute(new String[]{});
@@ -128,32 +120,32 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-    // this function can analyize the sentence and get response in the json array
-    // from the IBM tone analyizer Service
+    // this function can analyse the sentence and get a response in the json array
+    // from the IBM tone analyser Service
     // "tones": [
     //    {
     //    "score": 0.913043,
     //      "tone_id": "id",
     //     "tone_name": "name"
     //   },
-    // if the service fialed to analyize the Sentence
-    // they will return the empty string and App will show the Toast (Try Again Robot is confuse)
+    // if the service failed to analyse the sentence
+    // they will return the empty string and App will show the Toast (Try Again Robot is confused)
 
     private class AskWatsonTask extends AsyncTask<String,Void,String>{
         @Override
         protected String doInBackground(String... TextToAnalyse) {
-            System.out.println(edtTxt1.getText());
+            System.out.println(textEntry.getText());
 
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    txt1.setText("Analyizing the text......");
+                    intro.setText("Analysing the text...");
                 }
             });
             Authenticator authenticator = new IamAuthenticator("qOQvdMRiNw5sn9dNH6h0aJXrpRi0nMdzLzhzJYtKvdTs");
             ToneAnalyzer service = new ToneAnalyzer("2017-09-21", authenticator);
 
-            ToneOptions toneOptions = new ToneOptions.Builder().text(String.valueOf(edtTxt1.getText())).build();
+            ToneOptions toneOptions = new ToneOptions.Builder().text(String.valueOf(textEntry.getText())).build();
             ToneAnalysis tone = service.tone(toneOptions).execute().getResult();
             System.out.println(tone.getDocumentTone());
 
@@ -164,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             try {
 
-                // In response there was an json array
+                // In response there was a json array
                 // {
                 //  "tones": [
                 //    {
@@ -178,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 //      "tone_name": "Tentative"
                 //    }
                 //  ]
-                // the App can show the index which has highest score
+                // the app can show the index which has the highest score
                 // in the above json array tone id tentative has high score
 
                 int  i=0 , id =0;
@@ -196,35 +188,35 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             } catch (Exception exception) {
 
                 check= false;
-             //   Toast.makeText(getApplicationContext(),"Try Again Robot is confuse",Toast.LENGTH_SHORT).show();
+                //   Toast.makeText(getApplicationContext(),"Try Again, Robot is confused",Toast.LENGTH_SHORT).show();
                 return null;
             }
 
         }
 
-       @Override
-       protected void onPostExecute(String result) {
-         // txt1.setText("The message sentiment is "+ result);
-           if(check ) {
-               Intent intent = new Intent(MainActivity.this, ShowActivity.class);
-               intent.putExtra("sentiment", result );
-               intent.putExtra("score",  String.format("%.2f", score));
+        @Override
+        protected void onPostExecute(String result) {
+            // intro.setText("The message sentiment is "+ result);
+            if(check ) {
+                Intent intent = new Intent(MainActivity.this, ShowActivity.class);
+                intent.putExtra("sentiment", result );
+                intent.putExtra("score",  String.format("%.2f", score));
 
 
-               startActivity(intent);
-               finish();
-           }
+                startActivity(intent);
+                finish();
+            }
 
-           else
-           {
-               btn1.setVisibility(View.VISIBLE);
-               view.setVisibility(View.VISIBLE);
+            else
+            {
+                btn1.setVisibility(View.VISIBLE);
+                view.setVisibility(View.VISIBLE);
 
-               animationViewloader.setVisibility(View.GONE);
-               Toast.makeText(getApplicationContext(),"Try Again Robot is confuse",Toast.LENGTH_SHORT).show();
-               finish();
-               startActivity(getIntent());
-           }
+                animationViewloader.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(),"Try Again, Robot is confused",Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(getIntent());
+            }
 
         }
     }
@@ -251,11 +243,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-    // when the temperature and humidity of surrounding changes this function can updates the value
+    // when the temperature and humidity of surrounding changes this function can update the values
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType()==Sensor.TYPE_RELATIVE_HUMIDITY) {
-         //   mRelativeHumidityValue.setText("Relative Humidity in % is " + event.values[0]);
+            //   mRelativeHumidityValue.setText("Relative Humidity in % is " + event.values[0]);
             mLastKnownRelativeHumidity = event.values[0];
             humidityS=String.valueOf(mLastKnownRelativeHumidity)+"%";
         } else if(event.sensor.getType()==Sensor.TYPE_AMBIENT_TEMPERATURE) {
@@ -273,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
-    // In this function dialog will popup from bottom and show the humidity and temperature of surrounding
+    // In this function, dialogue will pop up from thr bottom and show the humidity and temperature of the surroundings
     public void ShowDialogBox(View view) {
 
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
@@ -281,8 +273,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         ImageButton closeDialog = (ImageButton) bottomSheetDialog.findViewById(R.id.close_dialog_sheet);
 
-        TextView temperatureText = (TextView) bottomSheetDialog.findViewById(R.id.temperature_text);
-        TextView humidityText = (TextView) bottomSheetDialog.findViewById(R.id.humdity_text);
+        TextView temperatureText = (TextView) bottomSheetDialog.findViewById(R.id.temperatureText);
+        TextView humidityText = (TextView) bottomSheetDialog.findViewById(R.id.humdityText);
 
         temperatureText.setText(temperatureS);
         humidityText.setText(humidityS);

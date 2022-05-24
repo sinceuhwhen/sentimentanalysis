@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Zahraa Abbas S00050748 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
-    android:background="?colorOnPrimary"
+    android:background="#161A25"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:weightSum="10"
@@ -21,7 +23,8 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:background="@drawable/ic_baseline_arrow_down"/>
+        android:background="@drawable/ic_baseline_arrow_down"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <View
         android:layout_width="match_parent"
@@ -48,27 +51,29 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
-        <TextView
-            android:fontFamily="@font/poppins_medium"
-            android:layout_width="0dp"
-            android:text="humidity"
-            android:textColor="@color/white"
-            android:textSize="22dp"
-            android:gravity="start|center_vertical"
-            android:layout_height="match_parent"
-            android:layout_weight="4"/>
 
         <TextView
-            android:id="@+id/humdity_text"
-            android:fontFamily="@font/poppins_medium"
+            android:id="@+id/humidityDisplay"
             android:layout_width="0dp"
-            android:text="35"
-            android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            android:gravity="end|center_vertical"
             android:layout_height="match_parent"
-            android:layout_weight="3"/>
+            android:layout_weight="4"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start|center_vertical"
+            android:text="@string/humidityDisplay"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/humdityText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="end|center_vertical"
+            android:text="@string/humidityText"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -99,29 +104,31 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
-        <TextView
-            android:fontFamily="@font/poppins_medium"
-            android:layout_width="0dp"
-            android:text="temperature"
-            android:maxLines="1"
-            android:textColor="@color/white"
-            android:textSize="22dp"
-            android:gravity="start|center_vertical"
-            android:layout_height="match_parent"
-            android:layout_weight="4.5"/>
 
         <TextView
-            android:id="@+id/temperature_text"
-            android:fontFamily="@font/poppins_medium"
+            android:id="@+id/temperatureDisplay"
             android:layout_width="0dp"
-            android:text="35"
-            android:textColor="@color/white"
-            android:textSize="24dp"
-            android:maxLines="1"
-            android:textStyle="bold"
-            android:gravity="end|center_vertical"
             android:layout_height="match_parent"
-            android:layout_weight="2.5"/>
+            android:layout_weight="4.5"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start|center_vertical"
+            android:maxLines="1"
+            android:text="@string/temperatureDisplay"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/temperatureText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="end|center_vertical"
+            android:maxLines="1"
+            android:text="@string/temperatureDisplay"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"

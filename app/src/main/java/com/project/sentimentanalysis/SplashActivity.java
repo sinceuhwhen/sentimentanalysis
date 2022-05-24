@@ -1,3 +1,4 @@
+// Mubarak Khalefoh S00036061
 package com.project.sentimentanalysis;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,9 +17,9 @@ public class SplashActivity extends AppCompatActivity {
 
     public void movetoMain(View view) {
 
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
-            finish();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 }

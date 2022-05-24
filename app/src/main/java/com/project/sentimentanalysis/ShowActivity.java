@@ -1,8 +1,8 @@
+// Zahraa Abbas S00050748
 package com.project.sentimentanalysis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +19,7 @@ public class ShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show);
 
         txt2 = (TextView) findViewById(R.id.text1);
-        scoreText = (TextView) findViewById(R.id.score_text);
+        scoreText = (TextView) findViewById(R.id.score);
 
         ImageView img= (ImageView) findViewById(R.id.emoji);
 
@@ -32,11 +32,11 @@ public class ShowActivity extends AppCompatActivity {
         {
             img.setImageResource(R.drawable.joy);
         }
-       else  if(id.equals("sadness"))
+        else  if(id.equals("sadness"))
         {
             img.setImageResource(R.drawable.sadness);
         }
-       else if(id.equals("fear"))
+        else if(id.equals("fear"))
         {
             img.setImageResource(R.drawable.fear);
         }

@@ -1,169 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Zahraa Abbas S00050748 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="?colorOnPrimary"
     android:orientation="vertical"
     android:weightSum="10"
-    android:layout_height="match_parent"
     tools:context=".ShowActivity">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
 
         android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="8"
+        android:background="#161A25"
+        android:backgroundTint="#000000"
         app:cardCornerRadius="15dp"
-        android:background="?colorOnPrimary"
-        android:backgroundTint="?colorPrimaryVariant"
-        app:cardElevation="10dp"
-        android:layout_height="0dp"
-        android:layout_weight="8">
+        app:cardElevation="10dp">
+
         <LinearLayout
             android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:orientation="vertical"
-            android:weightSum="10"
-            android:layout_height="fill_parent">
+            android:weightSum="10">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.25"/>
+                android:layout_weight="0.25" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal"
-                android:weightSum="10"
-                android:layout_weight="1">
+                android:weightSum="10">
+
+                <View
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    tools:ignore="NestedWeights" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/cancel_icon"
+                    android:onClick="BackActivity"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="9"/>
-                <ImageView
-                    android:onClick="BackActivity"
-                    android:layout_weight="0.4"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/cancel_icon"
-                    android:layout_gravity="center"
-                    />
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.6"/>
+                    android:layout_weight="0.6" />
 
             </LinearLayout>
 
             <TextView
 
                 android:layout_width="wrap_content"
-                android:textColor="@color/white"
-                android:text="Sentimental Analysis"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_medium"
-                android:textStyle="bold"
-                android:textSize="26dp"
-                android:layout_gravity="center"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Sentimental Analysis"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animationView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3.75"
-                app:lottie_rawRes="@raw/data_analysis"
-                app:lottie_autoPlay="true"
                 android:layout_gravity="center"
-                app:lottie_loop="true"/>
+                android:layout_weight="3.75"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/data_analysis" />
 
 
             <ImageView
                 android:id="@+id/emoji"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_gravity="center"
 
                 android:layout_weight="1.5"
-                android:src="@drawable/joy"></ImageView>
+                android:src="@drawable/joy" />
 
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.25"/>
+                android:layout_weight="0.25" />
+
             <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"
-                android:layout_width="match_parent"
-
-                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.75"
+                android:background="#0B83E3"
+                android:backgroundTint="#0B83E3"
                 app:cardCornerRadius="20dp"
-                android:background="?colorPrimary"
-                android:backgroundTint="?colorPrimary"
-                app:cardElevation="10dp"
-                android:layout_height="0dp"
-                android:layout_weight="0.75">
+                app:cardElevation="10dp">
 
 
                 <TextView
                     android:id="@+id/text1"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Tone Name"
-                    android:gravity="center"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_height="wrap_content"/>
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Tone Name"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </com.google.android.material.card.MaterialCardView>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5" />
 
             <TextView
-                android:id="@+id/score_text"
+                android:id="@+id/score"
                 android:layout_width="wrap_content"
-                android:textColor="#D3D3D3"
-                android:text="Accuracy:  100%"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_medium"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                android:layout_gravity="end"
-                android:layout_marginRight="20dp"
                 android:layout_height="0dp"
-                android:layout_weight="0.75"/>
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="0.75"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="Accuracy:  100%"
+                android:textColor="#D3D3D3"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.25"/>
-
-
-
+                android:layout_weight="0.25" />
 
 
         </LinearLayout>
 
 
-
     </com.google.android.material.card.MaterialCardView>
-
-
 
 
 </LinearLayout>

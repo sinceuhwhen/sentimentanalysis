@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">sentimentAnalysis</string>
+    <string name="intro">Hey ! I am a robot analyser...</string>
+    <string name="textEntry">Enter text to analyse</string>
+    <string name="analyseButton">Analyse</string>
+    <string name="sensors">Temperature and humidity</string>
+    <string name="score">Accuracy:  100%</string>
+    <string name="declaration">Sentimental Analysis App</string>
+    <string name="description">The tone analyser service uses linguistic analysis to detect emotional tones in written text.</string>
+    <string name="button1e">Get Started</string>
+    <string name="humidityDisplay">humidity</string>
+    <string name="humidityText">35</string>
+    <string name="temperatureDisplay">temperature</string>
+    <string name="temperatureText">35</string>
 </resources>
